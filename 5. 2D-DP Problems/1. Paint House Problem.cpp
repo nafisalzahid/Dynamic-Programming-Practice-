@@ -15,7 +15,9 @@ int main() {
 	    dp[i][0] = cost[i][0];
 	}
 	for(int j = 1; j < n; j++){
-	    dp[0][j] = dp[1][j] = dp[2][j] = INT_MAX;
+	    for(int k = 0; k < 3; k++){
+	        dp[k][j] = INT_MAX;
+	    }
 	    for(int i = 0; i < 3; i++){
 	        int min_prev = INT_MAX;
 	        for(int i_ = 0; i_ < 3; i_++){
